@@ -6,9 +6,15 @@ exports.handler = async (event, context) => {
   let browser = null
   console.log('spawning chrome headless')
   try {
+
     // need to specify where chromium is as it doesn't work with the one in local/temp
     // that is wants to use
-    const executablePath = 'C:/Program Files/chrome-win/chrome-win/chrome.exe'
+    let executablePath = 'C:/Program Files/chrome-win/chrome-win/chrome.exe'
+
+    // if we're not on local use the chromium package to determine the executable path
+    if (process.env.deploy_url.search('localhost') === -1) {
+        executablePath = await chromium.executablePath
+    }
 
     // setup
     browser = await puppeteer.launch({
