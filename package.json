@@ -1,0 +1,22 @@
+{
+  "name": "odds-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "node-fetch": "2.6.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peleburrows/odds-scraper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peleburrows/odds-scraper/issues"
+  },
+  "homepage": "https://github.com/peleburrows/odds-scraper#readme"
+}
