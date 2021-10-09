@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
     let executablePath = 'C:/Program Files/chrome-win/chrome-win/chrome.exe'
     
     // if we're not on local use the chromium package to determine the executable path
-    if (process.env.deploy_url) { //.search('localhost') === -1
+    if (!process.env.deploy_url) { //.search('localhost') === -1
         executablePath = await chromium.executablePath
     }
 
